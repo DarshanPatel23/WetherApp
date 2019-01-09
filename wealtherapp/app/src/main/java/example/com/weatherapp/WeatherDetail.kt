@@ -48,6 +48,9 @@ class WeatherDetail : AppCompatActivity(), OnTaskCompleted {
             )
             request.execute()
         } else {
+            if (mProgressDialog != null) {
+                mProgressDialog!!.dismiss()
+            }
             Utl.displaySnackbar(city_temp, resources.getString(R.string.internet_connection))
         }
     }
